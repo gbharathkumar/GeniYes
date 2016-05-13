@@ -1,0 +1,70 @@
+{
+	"name" : "GeniYes",
+	"version" : "0.0.1",
+	"description" : "Touch me. Get Everything",
+	"author" : {
+		"name" : "Gbharathkumar"
+	},
+	"main" : "server.js",
+	"scripts" : {
+		"start" : "node server.js",
+		"dev" : "nodemon server --ext 'js json' -w 'source/**/*'",
+		"debug" : "nodemon server --debug --ext 'js json' -w 'source/**/*'",
+		"lint" : "jshint 'source/**/*.js'",
+		"audit": "nsp audit-shrinkwrap && nsp audit-package",
+		"missing": "npm ls --depth 1",
+        "outdated": "npm outdated --depth 0",
+        "prepush": "npm shrinkwrap && npm test",
+        "postmerge": "npm install",
+        "pretest": "npm run lint"		
+	},
+	"pre-commit": [
+        "lint",
+        "audit",
+        "missing",
+        "outdated"
+    ],
+	"repository": {
+        "type": "git",
+        "url": "https://github.com/gbharathkumar/geniyes"
+    },
+	"files" : [
+		"source",
+		"server.js",
+		"README.md",
+		"LICENCE"
+	],
+	"dependencies": {
+        "express": "^4.13.4",
+        "mm-node-logger": "0.0.1",
+        "colors": "^1.1.2",
+        "morgan": "^1.7.0",
+        "helmet": "^2.0.0",
+        "body-parser": "^1.15.1",
+        "method-override": "^2.3.5",
+        "passport": "^0.3.2",
+        "passport-local": "^1.0.0",
+        "mongoose": "^4.4.16",
+        "redis": "^2.6.0-2",
+        "jsonwebtoken": "^6.2.0",
+        "path": "^0.12.7",
+        "glob": "^7.0.3",
+        "lodash": "^4.12.0",
+        "bcryptjs": "^2.3.0",
+        "cors": "^2.7.1",
+        "multer": "^1.1.0"
+    },
+	"devDependencies": {
+        "nsp": "^2.3.3",
+        "jshint": "^2.9.2",
+        "nodemon": "^1.9.2"
+    },
+	 "license": {
+        "type": "MIT",
+        "url": "https://github.com/gbharathkumar/geniyes/master/LICENSE"
+    },
+    "engines": {
+        "node": ">=0.12",
+        "npm": ">=2.x"
+    }
+}

@@ -1,0 +1,26 @@
+
+> GeniYes@0.0.1 dev D:\bharath\Working\Official\GeniYes\Server
+> nodemon server --ext 'js json' -w 'source/**/*'
+
+[33m[nodemon] 1.9.2[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: 'source/**/*'[39m
+[32m[nodemon] starting `node server json' server.js`[39m
+2016-05-13T17:08:49.681Z - [32minfo[39m: [D:\bharath\Working\Official\GeniYes\Server\source\config\mongoose.js] Mongoose connected to mongodb://127.0.0.1:27017/GeniYes
+TypeError: app.use() requires middleware functions
+    at EventEmitter.use (D:\bharath\Working\Official\GeniYes\Server\node_modules\express\lib\application.js:209:11)
+    at initMiddleware (D:\bharath\Working\Official\GeniYes\Server\source\config\express.js:52:9)
+    at Object.init (D:\bharath\Working\Official\GeniYes\Server\source\config\express.js:177:5)
+    at startServer (D:\bharath\Working\Official\GeniYes\Server\server.js:17:23)
+    at NativeConnection.<anonymous> (D:\bharath\Working\Official\GeniYes\Server\source\config\mongoose.js:44:46)
+    at NativeConnection.g (events.js:260:16)
+    at emitNone (events.js:67:13)
+    at NativeConnection.emit (events.js:166:7)
+    at open (D:\bharath\Working\Official\GeniYes\Server\node_modules\mongoose\lib\connection.js:512:11)
+    at NativeConnection.Connection.onOpen (D:\bharath\Working\Official\GeniYes\Server\node_modules\mongoose\lib\connection.js:521:5)
+    at D:\bharath\Working\Official\GeniYes\Server\node_modules\mongoose\lib\connection.js:483:11
+    at D:\bharath\Working\Official\GeniYes\Server\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:60:5
+    at D:\bharath\Working\Official\GeniYes\Server\node_modules\mongoose\node_modules\mongodb\lib\db.js:234:5
+    at connectHandler (D:\bharath\Working\Official\GeniYes\Server\node_modules\mongoose\node_modules\mongodb\lib\server.js:306:7)
+    at g (events.js:260:16)
+    at emitOne (events.js:77:13)

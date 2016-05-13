@@ -1,0 +1,20 @@
+
+'use strict';
+
+/**
+ * Module dependencies.
+ */
+var user           = require('./user.controller.js');
+var authentication = require('../authentication/authentication.controller.js');
+
+/**
+ * Set user routes.
+ *
+ * @param {Object} app The express application
+ */
+function setUserRoutes(app) {
+    app.route('/users/:id').get(authentication.isAuthenticated, user.findById);
+    app.route('/users').get(authentication.isAuthenticated, user.findAll);
+}
+
+module.exports = setUserRoutes;
