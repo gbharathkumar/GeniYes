@@ -17,7 +17,7 @@ mongodb(function startServer() {
     var app = express.init();
 
     // Start up the server on the port specified in the config after we connected to mongodb
-    app.listen(config.server.port, function () {
+    app.listen(config.server.port, config.server.host, function () {
         var serverBanner = ['',
             '*************************************' + ' EXPRESS SERVER '.yellow + '********************************************',
             '*',
