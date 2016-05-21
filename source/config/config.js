@@ -20,10 +20,20 @@ config.server = {
     port: process.env.OPENSHIFT_NODEJS_PORT || 8080
 };
 
+var url = 'mongodb://127.0.0.1:27017/GeniYes';
+var mongoDBusername = "";
+var mongoDBpassword = "";
+// if OPENSHIFT env variables are present, use the available connection info:
+if (process.env.OPENSHIFT_MONGODB_DB_URL) {
+    url = process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME;
+	mongoDBusername = "admin";
+	mongoDBpassword = "XitiDwY-X_Zn";
+}
+
 // MongoDB settings
 config.mongodb = {
-    dbURI: process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGODB_URI || process.env.MONGOLAB_URI || "mongodb://127.0.0.1:27017/GeniYes",
-    dbOptions: {"user": "admin", "pass": "XitiDwY-X_Zn"}
+    dbURI: url,
+    dbOptions: {"user": mongoDBusername, "pass": mongoDBpassword}
 };
 
 
