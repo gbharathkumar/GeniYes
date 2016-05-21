@@ -10,7 +10,7 @@ config.seedDB = false;
 
 // Token settings
 config.token = {
-    secret: process.env.TOKEN_SECRET || 'GeniYes',
+    secret: process.env.OPENSHIFT_SECRET_TOKEN || process.env.TOKEN_SECRET || 'GeniYes', //OPENSHIFT_SECRET_TOKEN
     expiration: process.env.TOKEN_EXPIRATION || 60*60*24 //24 hours
 };
 
@@ -22,8 +22,8 @@ config.server = {
 
 // MongoDB settings
 config.mongodb = {
-    dbURI: process.env.MONGODB_URI || process.env.MONGOLAB_URI || "mongodb://127.0.0.1:27017/GeniYes",
-    dbOptions: {"user": "", "pass": ""}
+    dbURI: process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGODB_URI || process.env.MONGOLAB_URI || "mongodb://127.0.0.1:27017/GeniYes",
+    dbOptions: {"user": "admin", "pass": "XitiDwY-X_Zn"}
 };
 
 
