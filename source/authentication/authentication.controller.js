@@ -69,6 +69,7 @@ function signout(req, res) {
  * @api public
  */
 function signup(req, res) {
+	console.log('within signup');
     var email = req.body.email || '';
     var password = req.body.password || '';
 

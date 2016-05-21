@@ -12,6 +12,7 @@ function localStrategy(User, config) {
             passwordField: 'password'
         },
         function(email, password, callback) {
+			console.log('with in signup function');
             User.findOne({
                 email: email.toLowerCase()
             }, function(err, user) {
@@ -19,6 +20,7 @@ function localStrategy(User, config) {
 
                 // no user found with that email
                 if (!user) {
+					console.log('user not found');
                     return callback(null, false, { message: 'The email is not registered.' });
                 }
                 // make sure the password is correct
